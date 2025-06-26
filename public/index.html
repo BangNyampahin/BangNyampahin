@@ -34,11 +34,20 @@
       margin: 1rem auto;
       border-radius: 12px;
     }
-  </style>
+    
+    input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+  </style> 
 </head>
 <div id="wallet-block"></div>
 <script>
-  fetch('./wallet.html')
+  fetch('/blocks/wallet.html')
     .then(res => res.text())
     .then(html => document.getElementById('wallet-block').innerHTML = html);
 </script>
