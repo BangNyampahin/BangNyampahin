@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Bang Nyampahin AI - Mint NFT</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rumah Warga - Nyampah Bersama</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
     .container {
-      background: white;
-      padding: 24px;
+      max-width: 400px;
+      padding: 20px;
+      margin-top: 40px;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
     }
-    input, textarea, button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    h1 {
+      font-size: 22px;
+      color: #15803d;
+      margin-bottom: 12px;
+    }
+    .card {
+      background: #ecfdf5;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+    .label {
+      font-weight: bold;
+      color: #065f46;
+    }
+    .value {
+      margin-top: 4px;
+      color: #0f172a;
     }
     button {
-      background-color: #27ae60;
-      color: white;
+      padding: 12px;
+      background: #22c55e;
       border: none;
+      color: white;
       font-weight: bold;
+      width: 100%;
+      border-radius: 8px;
       cursor: pointer;
+    }
+    button:hover {
+      background: #16a34a;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Mint NFT - Bang Nyampahin</h2>
-    <form id="mintForm">
-      <input type="text" id="name" placeholder="Nama NFT" required>
-      <textarea id="description" placeholder="Deskripsi NFT" required></textarea>
-      <input type="url" id="image_url" placeholder="URL Gambar NFT (IPFS/HTTPS)" required>
-      <input type="text" id="wallet_address" placeholder="Alamat Wallet Penerima" required>
-      <button type="submit">Mint Sekarang</button>
-    </form>
-    <p id="result"></p>
+    <h1>🏠 Rumah Warga</h1>
+
+    <div class="card">
+      <div class="label">Nama:</div>
+      <div class="value">Bang Nyampah</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Wallet Address:</div>
+      <div class="value">0xABC123...789</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Saldo NyampahCoin:</div>
+      <div class="value">123.45 NBC</div>
+    </div>
+
+    <button onclick="alert('Klaim harian berhasil!')">🎁 Klaim Harian</button>
   </div>
-
-  
-  <script>
-    document.getElementById('mintForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value;
-      const description = document.getElementById('description').value;
-      const image_url = document.getElementById('image_url').value;
-      const wallet_address = document.getElementById('wallet_address').value;
-
-      const response = await fetch('/api/mint', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, description, image_url, wallet_address })
-      });
-
-      const result = await response.json();
-      document.getElementById('result').innerText = result.success 
-        ? '✅ NFT berhasil di-mint!'
-        : '❌ Gagal minting: ' + result.error;
-    });
-  </script>
 </body>
 </html>
