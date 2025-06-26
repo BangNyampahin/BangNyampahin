@@ -6,3 +6,12 @@
     }
   ]
 }
+
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/client/rumah/index.html"
+    }
+  ]
+}
