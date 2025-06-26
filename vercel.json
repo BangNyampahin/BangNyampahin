@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/rumah",
+      "destination": "/client/rumah/index.html"
+    }
+  ]
+}
