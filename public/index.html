@@ -2,79 +2,94 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rumah Warga - Nyampah Bersama</title>
+  <title>Rumah Digital Warga – Nyampah Bersama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Thirdweb (untuk wallet) -->
+  <script src="https://unpkg.com/@thirdweb-dev/wallets@latest/dist/wallets.umd.js"></script>
+  <script src="https://unpkg.com/@thirdweb-dev/sdk@latest/dist/sdk.umd.js"></script>
+
+  <!-- Gaya Umum -->
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0fdf4;
-      margin: 0;
+      background: #f2fff4;
+      font-family: sans-serif;
       padding: 0;
-      display: flex;
-      justify-content: center;
+      margin: 0;
     }
-    .container {
-      max-width: 400px;
-      padding: 20px;
-      margin-top: 40px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      font-size: 22px;
-      color: #15803d;
-      margin-bottom: 12px;
-    }
+
     .card {
-      background: #ecfdf5;
-      padding: 16px;
-      border-radius: 10px;
-      margin-bottom: 16px;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 460px;
+      margin: 4rem auto 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    .label {
-      font-weight: bold;
-      color: #065f46;
-    }
-    .value {
-      margin-top: 4px;
-      color: #0f172a;
-    }
-    button {
-      padding: 12px;
-      background: #22c55e;
-      border: none;
+
+    .button {
+      padding: 12px 20px;
+      margin: 10px 0;
+      background: green;
       color: white;
-      font-weight: bold;
-      width: 100%;
+      border: none;
       border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
     }
-    button:hover {
-      background: #16a34a;
+
+    .nft-img {
+      width: 140px;
+      margin: 1rem auto;
+      border-radius: 12px;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>🏠 Rumah Warga</h1>
+  <!-- Hero Section -->
+  <div id="hero-block"></div>
+  <script>
+    fetch('./blocks/hero.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('hero-block').innerHTML = html);
+  </script>
 
-    <div class="card">
-      <div class="label">Nama:</div>
-      <div class="value">Bang Nyampah</div>
-    </div>
+  <!-- About Section -->
+  <div id="about-block"></div>
+  <script>
+    fetch('./blocks/about.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('about-block').innerHTML = html);
+  </script>
 
-    <div class="card">
-      <div class="label">Wallet Address:</div>
-      <div class="value">0xABC123...789</div>
-    </div>
+  <!-- Blog Section -->
+  <div id="blog-block"></div>
+  <script>
+    fetch('./blocks/blog.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('blog-block').innerHTML = html);
+  </script>
 
-    <div class="card">
-      <div class="label">Saldo NyampahCoin:</div>
-      <div class="value">123.45 NBC</div>
-    </div>
+  <!-- Contact Section -->
+  <div id="contact-block"></div>
+  <script>
+    fetch('./blocks/contactblog.html')  // ✅ perbaiki nama file-nya: contactblog.html
+      .then(res => res.text())
+      .then(html => document.getElementById('contact-block').innerHTML = html);
+  </script>
 
-    <button onclick="alert('Klaim harian berhasil!')">🎁 Klaim Harian</button>
-  </div>
+  <!-- Program Section -->
+  <div id="programs-block"></div>
+  <script>
+    fetch('./blocks/program.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('programs-block').innerHTML = html);
+  </script>
 </body>
 </html>
