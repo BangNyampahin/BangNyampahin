@@ -36,7 +36,12 @@
     }
   </style>
 </head>
-
+<div id="wallet-block"></div>
+<script>
+  fetch('./wallet.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('wallet-block').innerHTML = html);
+</script>
 <body>
   <!-- Hero Section -->
   <div id="hero-block"></div>
