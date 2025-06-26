@@ -4,23 +4,9 @@
   <meta charset="UTF-8" />
   <title>Rumah Digital Warga – Nyampah Bersama</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Thirdweb (untuk wallet) -->
-  <script src="https://unpkg.com/@thirdweb-dev/wallets@latest/dist/wallets.umd.js"></script>
-  <script src="https://unpkg.com/@thirdweb-dev/sdk@latest/dist/sdk.umd.js"></script>
-
-  <!-- Gaya Umum -->
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #f2fff4;
-      font-family: sans-serif;
-      padding: 0;
-      margin: 0;
-    }
+    html { scroll-behavior: smooth; }
+    body { background: #f2fff4; font-family: sans-serif; padding: 0; margin: 0; }
 
     .card {
       background: white;
@@ -55,7 +41,7 @@
   <!-- Hero Section -->
   <div id="hero-block"></div>
   <script>
-    fetch('./blocks/hero.html')
+    fetch('/blocks/hero.html')
       .then(res => res.text())
       .then(html => document.getElementById('hero-block').innerHTML = html);
   </script>
@@ -63,7 +49,7 @@
   <!-- About Section -->
   <div id="about-block"></div>
   <script>
-    fetch('./blocks/about.html')
+    fetch('/blocks/about.html')
       .then(res => res.text())
       .then(html => document.getElementById('about-block').innerHTML = html);
   </script>
@@ -71,7 +57,7 @@
   <!-- Blog Section -->
   <div id="blog-block"></div>
   <script>
-    fetch('./blocks/blog.html')
+    fetch('/blocks/blog.html')
       .then(res => res.text())
       .then(html => document.getElementById('blog-block').innerHTML = html);
   </script>
@@ -79,7 +65,7 @@
   <!-- Contact Section -->
   <div id="contact-block"></div>
   <script>
-    fetch('./blocks/contactblog.html')  // ✅ perbaiki nama file-nya: contactblog.html
+    fetch('/blocks/contact.html')
       .then(res => res.text())
       .then(html => document.getElementById('contact-block').innerHTML = html);
   </script>
@@ -87,7 +73,7 @@
   <!-- Program Section -->
   <div id="programs-block"></div>
   <script>
-    fetch('./blocks/program.html')
+    fetch('/blocks/program.html')
       .then(res => res.text())
       .then(html => document.getElementById('programs-block').innerHTML = html);
   </script>
