@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rumah Digital Warga – Nyampah Bersama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/@thirdweb-dev/wallets@latest/dist/wallets.umd.js"></script>
+  <script src="https://unpkg.com/@thirdweb-dev/sdk@latest/dist/sdk.umd.js"></script>
+  <style>
+    body { background: #f2fff4; font-family: sans-serif; padding: 2rem; text-align: center; }
+    .card { background: white; border-radius: 16px; padding: 2rem; max-width: 460px; margin: auto; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .button { padding: 12px 20px; margin: 10px 0; background: green; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .info { font-size: 0.9rem; margin-top: 1rem; color: #444; }
+    .nft-img { width: 140px; margin: 1rem auto; border-radius: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏡 Rumah Digital Warga</h2>
+    <p><strong>Alamat Wallet:</strong> <span id="walletAddress">Belum Terhubung</span></p>
+
+    <img src="https://gateway.ipfs.io/ipfs/QmaCcUp892qV1x7AyWArT2VcTvcjFjVwQfdUuyY3WP7uAb/0" alt="NFT Kamu" class="nft-img"/>
+
+    <p><em>“Setiap sampahmu adalah sejarah. Dan ini rumah digitalnya.”</em></p>
+
+    <button class="button" onclick="connectWallet()">🔗 Hubungkan Wallet</button>
+    <button class="button" onclick="window.location.href='https://linktr.ee/nyampahbersama'">🚪 Masuk Program</button>
+  </div>
+
+  <script>
+    const { ThirdwebEmbeddedWalletConnector } = thirdwebWallets;
+
+    async function connectWallet() {
+      const connector = new ThirdwebEmbeddedWalletConnector({
+        clientId: "your-client-id" // Ganti dengan milikmu dari Thirdweb dashboard
+      });
+
+      const wallet = await connector.connect();
+      const address = await wallet.getAddress();
+      document.getElementById("walletAddress").textContent = address;
+    }
+  </script>
+
+</body>
+</html>
