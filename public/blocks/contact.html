@@ -48,7 +48,34 @@
           <p style="color: #bbf7d0;">LinkedIn: Nyampah Bersama</p>
         </div>
       </div>
+<div class="card">
+  <h2>📬 Hubungi Kami</h2>
+  <form id="contact-form">
+    <input type="text" name="nama" placeholder="Nama Lengkap" required />
+    <input type="email" name="email" placeholder="Email Aktif" required />
+    <textarea name="pesan" rows="4" placeholder="Tulis pesan atau ide kamu..." required></textarea>
 
+    <button type="submit" class="button">Kirim Pesan</button>
+    <button type="button" class="button" onclick="openWallet()">Dompet Crypto</button>
+  </form>
+</div>
+
+<script>
+  // Fungsi kirim form ke Google Sheets atau webhook
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Pesan terkirim! 📤 (Simulasi, belum disambung)");
+
+    // Nanti tinggal sambung ke Webhook/Make
+    // Bisa juga fetch ke Google Apps Script endpoint
+  });
+
+  // Tombol buka dompet
+  function openWallet() {
+    alert("Fitur dompet akan dibuka! 🔓 (Simulasi)");
+    // Bisa arahkan ke wallet.html atau show modal
+  }
+</script>
     </div>
   </div>
 </section>
