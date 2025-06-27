@@ -1,1 +1,5 @@
-
+@media (max-width: 600px) {
+  #canvas {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
