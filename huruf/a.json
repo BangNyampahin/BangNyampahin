@@ -1,0 +1,26 @@
+{
+  "name": "NFT Huruf A",
+  "description": "Semua fungsi JavaScript & HTML utama berawalan 'A'. Puzzle code modular.",
+  "letter": "A",
+  "parent_registry": "0xDD4BEa2145f6A761f7B63dbeD5952bb421DC2869/1",
+  "parent_platform": "ipfs://bafkreihyo4cohhjdonzye5mu2sdwj6zq5o4y4flpxxgz6tgooalepwi73y",
+  "block_position": { "x": 0, "y": 0, "w": 2, "h": 2 },
+  "created_by": "0x7Af07c98e1B47FD928E5e761B7477074DD536162",
+  "version": "v1.0",
+  "timestamp": "2025-06-27T02:36:02Z",
+  "image": "ipfs://bafkreiddlgz4dvmiq6two54nzm6copqmmaxltujvje4vbjmn35sasrziqq",
+  "code_snippets": [
+    { "type": "javascript", "label": "Alert A", "code": "export function AlertA(msg){ alert(msg); }" },
+    { "type": "html", "label": "HTML A", "code": "<div class='huruf-A'>Huruf A Section</div>" }
+  ],
+  "animation_url": "https://www.figma.com/file/QV2uFfnRjdj25QHooIp6wI?node-id=0:1&locale=en&type=design",
+  "attributes": [
+    { "trait_type": "Type", "value": "codeblock" },
+    { "trait_type": "Letter", "value": "A" },
+    { "trait_type": "Category", "value": "JS,HTML,Modular" }
+  ],
+  "manifest": {
+    "vision": "Blok konstituen puzzle code digital. Hanya aktif di atas Genesis Block Viewer.",
+    "dependency": ["NFT Genesis Block Viewer"]
+  }
+}
