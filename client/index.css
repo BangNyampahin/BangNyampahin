@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(220, 13%, 96%);
+  --foreground: hsl(220, 9%, 9%);
+  --muted: hsl(220, 7%, 95%);
+  --muted-foreground: hsl(220, 5%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(220, 9%, 9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(220, 9%, 9%);
+  --border: hsl(220, 7%, 90%);
+  --input: hsl(220, 7%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(220, 7%, 95%);
+  --secondary-foreground: hsl(220, 9%, 15%);
+  --accent: hsl(187, 100%, 42%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(14, 91%, 54%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(207, 90%, 54%);
+  --radius: 0.75rem;
+  --success: hsl(122, 39%, 49%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(37, 91%, 55%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(220, 9%, 9%);
+  --sidebar-primary: hsl(207, 90%, 54%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(220, 7%, 95%);
+  --sidebar-accent-foreground: hsl(220, 9%, 9%);
+  --sidebar-border: hsl(220, 7%, 90%);
+  --sidebar-ring: hsl(207, 90%, 54%);
+}
+
+.dark {
+  --background: hsl(220, 16%, 6%);
+  --foreground: hsl(220, 5%, 95%);
+  --muted: hsl(220, 12%, 12%);
+  --muted-foreground: hsl(220, 5%, 65%);
+  --popover: hsl(220, 16%, 6%);
+  --popover-foreground: hsl(220, 5%, 95%);
+  --card: hsl(220, 16%, 6%);
+  --card-foreground: hsl(220, 5%, 95%);
+  --border: hsl(220, 12%, 15%);
+  --input: hsl(220, 12%, 15%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(220, 12%, 12%);
+  --secondary-foreground: hsl(220, 5%, 95%);
+  --accent: hsl(187, 100%, 42%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(14, 91%, 54%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(207, 90%, 54%);
+  --success: hsl(122, 39%, 49%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(37, 91%, 55%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --sidebar-background: hsl(220, 16%, 6%);
+  --sidebar-foreground: hsl(220, 5%, 95%);
+  --sidebar-primary: hsl(207, 90%, 54%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(220, 12%, 12%);
+  --sidebar-accent-foreground: hsl(220, 5%, 95%);
+  --sidebar-border: hsl(220, 12%, 15%);
+  --sidebar-ring: hsl(207, 90%, 54%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-white dark:bg-card rounded-xl shadow-sm border border-gray-200 dark:border-border p-6;
+  }
+  
+  .stat-icon {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+  }
+  
+  .nav-item {
+    @apply flex items-center px-3 py-2.5 text-sm font-medium rounded-lg mb-1 transition-colors cursor-pointer;
+  }
+  
+  .nav-item-active {
+    @apply text-primary bg-primary bg-opacity-10 border border-primary border-opacity-20;
+  }
+  
+  .nav-item-inactive {
+    @apply text-muted-foreground hover:text-foreground hover:bg-accent;
+  }
+  
+  .service-card {
+    @apply flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-accent transition-colors;
+  }
+  
+  .action-item {
+    @apply flex items-center space-x-3 p-3 bg-muted rounded-lg hover:bg-accent transition-colors;
+  }
+
+  .chat-bubble {
+    @apply rounded-lg p-3 max-w-[80%] break-words;
+  }
+
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .chat-bubble-ai {
+    @apply bg-muted;
+  }
+
+  .module-card {
+    @apply p-3 border rounded-lg hover:shadow-sm hover:border-primary transition-all duration-200;
+  }
+
+  .status-indicator {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-connected {
+    @apply bg-green-500;
+  }
+
+  .status-disconnected {
+    @apply bg-gray-400;
+  }
+
+  .status-error {
+    @apply bg-red-500;
+  }
+}
