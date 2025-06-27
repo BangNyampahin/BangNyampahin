@@ -1,6 +1,15 @@
 import { getMetadataFromNFT } from './utils.js';
 import { renderNFTLayout } from './nftRenderer.js';
+import { fetchMetadata, renderCanvas } from './nftRenderer.js';
 
+window.onload = async () => {
+  const params = new URLSearchParams(window.location.search);
+  const tokenURI = params.get('uri') || 'ipfs://QmSjwUBj1x3CGM1c2NkunKNDprVx7EscQVovyr65DormaW/0';
+  const cleanURI = tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/');
+
+  const data = await fetchMetadata(cleanURI);
+  renderCanvas(data);
+};
 window.onload = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const contract = urlParams.get('contract');
